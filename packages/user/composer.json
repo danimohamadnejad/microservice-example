@@ -1,0 +1,26 @@
+{
+    "name": "soa/user",
+    "description": "microservice for user management",
+    "autoload": {
+        "psr-4": {
+            "Soa\\User\\": "src/",
+            "Soa\\User\\Database\\Seeders\\": "database/seeders/"
+        },
+        "files":[
+            "helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "danial mohamadnjead",
+            "email": "danimohamadnejad@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra":{
+        "laravel":{
+            "providers":["Soa\\User\\UserServiceProvider"]
+        }
+    }
+}

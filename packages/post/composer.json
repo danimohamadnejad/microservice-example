@@ -1,0 +1,23 @@
+{
+    "name": "soa/post",
+    "description": "microservice to manage post",
+    "autoload": {
+        "psr-4": {
+            "Soa\\Post\\": "src/"
+        },
+        "files":["helpers.php"]
+    },
+    "authors": [
+        {
+            "name": "danial mohamadnejad",
+            "email": "danimohamadnejad@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra":{
+        "laravel":{
+            "providers":["Soa\\Post\\PostServiceProvider"]
+        }
+    }
+}
