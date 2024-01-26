@@ -10,7 +10,10 @@ You will need xampp:
 10. create two more databases in addition to one you have in .env and name them: soa_user, soa_post
 11. php artisan migate --seed (OR php artisan migrate:refresh --seed)
 12. php artisan serve
-
+13. We have two api.php files in packages/post and packages/user. To check how request them, inspect 
+ corresponding documentations above controller methods. When using postman to send sanctum authorization
+  token when required, select Bearer Token type and paste your token after you got it from login endpoint.
+ 
 Now you have a user in soa_user.users table and you can start application.
 
 Some explanations:

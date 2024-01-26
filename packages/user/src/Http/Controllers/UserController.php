@@ -11,7 +11,12 @@ use Soa\User\Http\Resources\UserResource;
 
 class UserController extends Controller{
     use ControllerTrait;
-    
+    /** 
+     * @bodyParam mobile string required
+     * @bodyParam password string required 
+     * @header Accept application/json 
+     * 
+    */
     public function login(LoginRequest $req){
       $data = $req->validated();
       if(Auth::attempt($data)){
@@ -22,7 +27,11 @@ class UserController extends Controller{
       }
       abort(500);
     }
-
+    /**
+     * @header Accept application/json
+     * @authenticated
+     * 
+    */
     public function logout(Request $req){
         if(auth()->user()->tokens()->delete()){
          return response()->json([
@@ -31,6 +40,11 @@ class UserController extends Controller{
         }
         abort(500);
     }
+    /**
+     * @header Accept application/json
+     * @authenticated
+     * 
+    */
     public function check_authentication(){
       return response()->json([
         'result'=>true, 

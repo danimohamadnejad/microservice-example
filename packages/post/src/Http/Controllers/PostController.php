@@ -10,7 +10,13 @@ use Soa\Post\Http\Resources\PostResource;
 
 class PostController extends Controller{
     use ControllerTrait;
-
+    /**
+     * @authenticated
+     * @header Accept application/json
+     * @bodyParam title string required
+     * @bodyParam content text required 
+     * 
+    */
     public function store(PostStoreRequest $req){
       $data = $req->validated();
       $user_data = Auth::user();
